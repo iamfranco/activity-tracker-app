@@ -1,0 +1,18 @@
+html 
+  head
+    title Activity Tracker | Login 
+    meta(name='description', content='Home page')
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+  body 
+    h1 Login 
+    form(action="/login", method="POST") 
+      div 
+        label(for="username") Username 
+        input#username(type="text", name="username", required) 
+      div 
+        label(for="password") Password 
+        input#password(type="password", name="password", required) 
+      button(type="submit") Login
+    a(href="/register") Register 
