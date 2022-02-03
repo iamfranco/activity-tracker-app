@@ -9,3 +9,5 @@ html
     h1 Welcome, #{username}!
     form(action="/logout?_method=DELETE", method="POST")
       button(type="submit") Log Out
+    form(action="/deactivate", method="POST")
+      button(type="submit") Deactivate Account

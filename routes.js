@@ -52,6 +52,14 @@ module.exports = function (app, Users) {
     res.redirect("/login")
   })
 
+  app.post("/deactivate", ensureAuthenticated, (req, res) => {
+    Users.deleteOne({ _id: req.user._id }, (err, user) => {
+      if (err) return console.log(err)
+      req.logOut()
+      res.redirect("/login")
+    })
+  })
+
   function ensureAuthenticated(req, res, next) {
     if (req.isAuthenticated()) {
       return next()
