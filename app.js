@@ -5,7 +5,6 @@ const app = express()
 
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema
-const flash = require("express-flash")
 const session = require("express-session")
 const passport = require("passport")
 const initializePassport = require("./passport-config")
@@ -14,7 +13,6 @@ const routes = require("./routes")
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
-app.use(flash())
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
